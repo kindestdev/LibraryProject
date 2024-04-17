@@ -17,12 +17,10 @@ Book.prototype.toggleReadStatus = function() {
 };
 
 const book1 = new Book('Naruto','Nishito nosq','1923','false')
-const book2 = new Book('JJK vol1','Gojo Satoru','1432','false')
+const book2 = new Book('JJK vol1','Gojo Satoru','1432','true')
 const book3 = new Book('Boku No Hero','Midoriya almighty','1265','false')
 
-
 const myLibrary = [book1,book2,book3];
-
 
 
 function displayBooks(){
@@ -30,29 +28,28 @@ function displayBooks(){
   while(content.firstChild)
   {content.removeChild(content.firstChild)}
 
+
+  function ElementCreate(type,contenido,clase){
+     
+      this.el = document.createElement(type);
+      this.el.textContent = contenido;
+      this.el.classList.add(clase);
+    
+  }
+
   myLibrary.forEach((book,index)=>{
     const card = document.createElement('div');
     card.classList.add('card')
 
-    const title = document.createElement('p');
-    title.classList.add('cardTitle');
-    title.textContent = book.title;
-    card.appendChild(title);
+    const title = new ElementCreate('p',`Title: ${book.title}`,'title');
 
-    const author = document.createElement('p');
-    author.classList.add('cardAuthor');
-    author.textContent = 'Author: ' + book.author;
-    card.appendChild(author);
+    const author = new ElementCreate('p',`Author: ${book.author}`,'author');
 
-    const pages = document.createElement('p');
-    pages.classList.add('cardPages');
-    pages.textContent = 'Pages: ' + book.pages;
-    card.appendChild(pages);
+    const pages = new ElementCreate('p',`Pages: ${book.pages}`,'pages');
 
-    const readInfo = document.createElement('p');
-    readInfo.classList.add('cardReadInfo');
-    readInfo.textContent = `Read: ${book.read === 'true' ? 'Yes' : 'No'}`
-    card.appendChild(readInfo);
+    const readInfo = new ElementCreate('p',`Read: ${book.read === 'true' ?'Yes' :'No'}`,'read')
+
+    card.appendChild(title.el);card.appendChild(author.el);card.appendChild(pages.el);card.appendChild(readInfo.el);
 
     const toggleButton = document.createElement('button');
     toggleButton.classList.add('toggle-button');
@@ -61,9 +58,8 @@ function displayBooks(){
     toggleButton.addEventListener('click',()=> {
       book.toggleReadStatus();
 
-      readInfo.textContent = `Read: ${book.read ? 'Yes' : 'No'}`
+      readInfo.el.textContent = `Read: ${book.read ? 'Yes' : 'No'}`
     })
-
 
     const removeButton = document.createElement('button');
     removeButton.classList.add('remove-button');
@@ -72,15 +68,11 @@ function displayBooks(){
     removeButton.addEventListener('click', ()=>{
       myLibrary.splice(index,1);
       displayBooks()
-      // i think might be missing here
     })
 
     card.appendChild(toggleButton);
     card.appendChild(removeButton);
     content.appendChild(card);
-
-    
-    
   })}
 
   document.querySelector('#bookForm').addEventListener('submit',function (event) {
