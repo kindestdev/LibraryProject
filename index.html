@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bigContainer">
+        <header>
+            <div class="header">
+                <h1 class="title">Animes</h1>
+                <button class="add">Add Book</button>
+            </div>
+        </header>       
+        <main>
+            <div class="main">
+                <div class="allinfo"></div>
+                <div class="booksDisplay">
+                </div>
+            </div>
+        </main>      
+        <dialog class="modal">
+            <form id="bookForm">
+                <div>
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" name="title">
+                </div>
+                <div>
+                    <label for="author">Author:</label>
+                    <input type="text" id="author" name="author">
+                </div>
+                <div>
+                    <label for="pages">Pages:</label>
+                    <input type="number" id="pages" name="pages" max="5000" oninput="limitLength(this, 5)">
+                </div>
+                <div class="checkbox-container">
+                  <label for="read">Read</label>
+                  <input type="checkbox" id="read" name="read">
+                </div>
+                <button type="submit">Add Book</button>
+            </form>
+        </dialog>
+    </div>
+</body>
+<script src="script.js"></script>
+</html> 

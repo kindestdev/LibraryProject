@@ -1,0 +1,197 @@
+*{
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    font-size: 2vh;
+  }
+  
+  
+  body{
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    min-height: 100vh;
+    line-height: 1.5;
+    background-color: #ccc;
+    font-size: 2vh;
+  
+  
+  }
+  .bigContainer{
+   top: 0%;
+   position: sticky;
+    display: flex;
+    flex-direction: column;
+    font-size: 2vh;
+    width: 100%;
+    
+  }
+  .title{
+    color: white;
+  }
+  header{
+    background-color: rgb(61, 133, 185);
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  
+  }
+  .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   width: 70%;
+  }
+  .add{
+    width: 10%;
+    height: 60%;
+    font-size: 1em;
+    border-radius: 15px;
+    color: rgb(61, 133, 185);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  }
+  .add:hover{
+    background-color: rgb(207, 241, 252) ;
+    width: 11%;
+    height: 61%;
+  
+  
+  }
+    
+  main{
+    display: flex;
+    justify-content: center;
+  }
+  .main{
+    width: 70%;
+  }
+  .modal{
+    border: none;
+  border-radius: 30px;
+  width: 25%;
+  height: 45%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color:rgb(66, 147, 205) ;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+  .modal h1, .modal p{
+    color: white;
+  }
+  #bookForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2vh;
+    padding-top: 1vh;
+    padding-bottom:1vh ;
+    height: 90%;
+    font-size: 2vh;
+  
+  }
+  #bookForm input{
+    border-radius: 10px;
+    font-size: 2vh;
+  }
+  .modal h1{
+    text-align: center;
+  }
+  .modal input{
+    width: 95%;
+    height: 3vh;
+  }
+  label{
+    color: white;
+  }
+  #bookForm div{
+    width: 90%;
+    /* height: 90%; */
+  }
+  .checkbox-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1vh;
+  }
+  .checkbox-container input{
+    width: 2vh;
+  }
+  #bookForm button {
+    width: 95%;
+    height: 5vh;
+    color: rgb(66, 147, 205);
+  }
+  .modal button {
+    font-size: 3vh;
+    border-radius: 30px;
+  }
+  .modal button:hover {
+    font-size: 3.1vh;
+    border-radius: 30px;
+    background-color: rgb(207, 241, 252) ;
+  }
+  
+  
+  /* Contenido que se agrega via javascript aka books cards */
+  
+  .booksDisplay button{
+    font-size: 2vh;
+    border-radius: 20px;
+    padding: .4vh;
+  }
+  .booksDisplay {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5vh;
+    margin-top: 2vh;
+  }
+  .card{
+    background-color:rgb(61, 133, 185) ;
+    border-radius: 20px;
+    height: 28vh;
+    width: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    line-height: 1.7;
+    letter-spacing: .1vh;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+  .toggle-button{
+    margin-bottom: 2vh;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    color: rgb(61, 133, 185);
+  }
+  .remove-button{
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    color: rgb(61, 133, 185);
+  }
+  .remove-button:hover{
+    background-color: rgb(207, 241, 252) ;
+    font-size: 2.51vh;
+  }
+  .toggle-button:hover{
+    background-color: rgb(207, 241, 252) ;
+    font-size: 2.51vh;
+  }
+  .cardTitle{
+    color: white;
+    font-weight: 900;
+    font-size: 3vh;
+  }
+  .booksDisplay p{
+    color: white;
+  }
+  
+  
