@@ -5,13 +5,25 @@ addButton.addEventListener('click',()=>{
   modal.showModal();
 })
 
-function Book(title,author,pages,read) {
-  // the constructor...
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
+class Book{
+
+  constructor(title,author,pages,read){
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+
+  }
+
 }
+
+// function Book(title,author,pages,read) {
+//   // the constructor...
+//   this.title = title;
+//   this.author = author;
+//   this.pages = pages;
+//   this.read = read;
+// }
 Book.prototype.toggleReadStatus = function() {
   this.read = !this.read;
 };
@@ -28,14 +40,24 @@ function displayBooks(){
   while(content.firstChild)
   {content.removeChild(content.firstChild)}
 
-
-  function ElementCreate(type,contenido,clase){
-     
+  
+  class ElementCreate {
+    constructor(type,contenido,clase){
       this.el = document.createElement(type);
       this.el.textContent = contenido;
       this.el.classList.add(clase);
-    
+    }
+
+
   }
+
+  // function ElementCreate(type,contenido,clase){
+     
+  //     this.el = document.createElement(type);
+  //     this.el.textContent = contenido;
+  //     this.el.classList.add(clase);
+    
+  // }
 
   myLibrary.forEach((book,index)=>{
     const card = document.createElement('div');

@@ -55,6 +55,7 @@
     border-radius: 15px;
     color: rgb(61, 133, 185);
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    border: none;
   }
   .add:hover{
     background-color: rgb(207, 241, 252) ;
@@ -133,6 +134,8 @@
   .modal button {
     font-size: 3vh;
     border-radius: 30px;
+    border: none;
+
   }
   .modal button:hover {
     font-size: 3.1vh;
@@ -147,6 +150,8 @@
     font-size: 2vh;
     border-radius: 20px;
     padding: .4vh;
+    border: none;
+
   }
   .booksDisplay {
     display: grid;
